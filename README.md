@@ -3,13 +3,17 @@
 **GLAMM** is a newly developed modal aerosol microphysics scheme integrated into the GFDL AM4.0 model. Unlike the bulk aerosol schemes previously used in AM4.0, GLAMM employs a modal representation that explicitly tracks the evolution of aerosol mass, number concentration, and mixing state (internal and external) across multiple modes. This repository contains the source code for the GLAMM component and the necessary modifications to the AM4.0 host model. Questions regarding GLAMM can be reached to the developer Xiaohan Li (xiaohanl@princeton.edu).
 
 ## 📄 Reference & Citation
-The full description of the model and its evaluation with observational constraints can be found in:
->**The GFDL's Aerosol Microphysics Model (GLAMM) – Part 1: Model Description and Aerosol Evaluation with Observational Constraints** 
->
->**Authors:** Xiaohan Li, Fabien Paulot, Uriel Ramirez, Susanne E. Bauer, Xiaohong Liu, Paul Ginoux 
->
+**GLAMM** is described and evaluated in a two-part series:
 
-Please cite this paper if you use GLAMM in your research.
+**Part 1:** model description and aerosol evaluation
+
+Li, X., Paulot, F., Ramirez, U., Bauer, S. E., Liu, X., & Ginoux, P. (2026). The GFDL's Aerosol Microphysics Model (GLAMM) Part 1: Model Description and Aerosol Evaluation With Observational Constraints. *Journal of Advances in Modeling Earth Systems*, 18(10), e2026MS005864. https://doi.org/10.1029/2026MS005864
+
+**Part 2:** cloud condensation nuclei evaluation
+
+Li, X., Paulot, F., Guo, H., Zhou, S., Fan, S., Ramirez, U., Bauer, S. E., Liu, X., & Ginoux, P. The GFDL's Aerosol Microphysics Model (GLAMM) Part 2: A Global Observational Synthesis and Model Evaluation of Cloud Condensation Nuclei. In preparation for submission to *Journal of Advances in Modeling Earth Systems*.
+
+Please cite these paper if you use GLAMM in your research.
 
 ## 🔬 Scientific Overview
 GLAMM provides a prognostic treatment of aerosol microphysical processes. It moves beyond the bulk method by independently tracking **Number ($N$)** and **Mass ($M$)** for each mode.
