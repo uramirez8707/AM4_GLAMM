@@ -1,4 +1,4 @@
-c96L33_amip_glamm
+c96L33_amip_glamm_p2
 2000 1 1 0 0 0
       # Simplified diag_table for running AWG AMIP experiments
 "grid_spec",            -1, "months",  1, "days", "time",
@@ -324,6 +324,22 @@ c96L33_amip_glamm
 "vert_turb", "z_Ri_025",    "z_Ri_025",    "atmos_diurnal", "all", "diurnal24", "none", 2
 "moist",     "precip",      "precip",      "atmos_diurnal", "all", "diurnal24", "none", 2
 "moist",     "prec_conv",   "prec_conv",   "atmos_diurnal", "all", "diurnal24", "none", 2
+"dynamics",  "simpleSO2", "SO2", "atmos_tracer", "all", .true.,  "none", 2
+#"dynamics",  "simpleSO4", "SO4", "atmos_tracer", "all", .true.,  "none", 2
+"dynamics",  "simpleH2O2","H2O2","atmos_tracer", "all", .true.,  "none", 2
+"dynamics",  "simpleDMS", "DMS", "atmos_tracer", "all", .true.,  "none", 2
+"dynamics",  "simpleMSA", "MSA", "atmos_tracer", "all", .true.,  "none", 2
+#"dynamics",  "simpleH2SO4", "simpleH2SO4", "atmos_tracer", "all", .true., "none", 2
+##----------------------debug: the following 2 lines don't produce output
+##"dynamics",  "so4_col",     "so4_col",      "atmos_tracer", "all", .true., "none", 2 
+##"dynamics",  "simpleH2SO4_col", "simpleH2SO4_col",  "atmos_tracer", "all", .true., "none", 2
+##----------------------end
+#"tracers", "so4_col",     "so4_col",        "atmos_tracer", "all", .true., "none", 2
+#"tracers", "simpleH2SO4_col", "simpleH2SO4_col",  "atmos_tracer", "all", .true., "none", 2
+#"moist", "wetso4",                "wetso4",               "atmos_tracer", "all", .true., "none", 2
+#"moist", "simpleSO4_wet_depo",    "simpleSO4_wet_dep",    "atmos_tracer", "all", .true., "none", 2
+#"moist", "simpleSO4_wet_depo_uw", "simpleSO4_wet_dep_uw", "atmos_tracer", "all", .true., "none", 2
+#"moist", "simpleSO4_wetdep",      "simpleSO4_wetdep",     "atmos_tracer", "all", .true., "none", 2
 #output files
 "land_static",     -1,  "months", 1, "days", "time"
 "land_static_sg",  -1,  "months", 1, "days", "time"
@@ -554,15 +570,13 @@ c96L33_amip_glamm
 "land",    "LWSr",       "LWSr",       "land_month_inst",  "all", .false., "none", 2
 "land",    "FWSr",       "FWSr",       "land_month_inst",  "all", .false., "none", 2
 "land",    "HSr",        "HSr",        "land_month_inst",  "all", .false., "none", 2
-# Simplified diag_table for running AWG AMIP experiments
+# simplified diag_table for running awg amip experiments
  "matrix_tracer",          1, "months",  1, "days", "time",
 "dynamics",  "bk",    "bk",      "matrix_tracer", "all", .false., "none", 2
 "dynamics",  "pk",    "pk",      "matrix_tracer", "all", .false., "none", 2
 "dynamics",  "ps",    "ps",      "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "sphum", "sphum",   "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "temp",  "temp",    "matrix_tracer", "all", .true.,  "none", 2
-"dynamics",  "simpleH2SO4", "simpleH2SO4", "matrix_tracer", "all", .true., "none", 2
-"dynamics",  "simpleSO4", "SO4", "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "akk_n",  "akk_n",    "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "akk_msulf",  "akk_msulf",    "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "acc_n",  "acc_n",    "matrix_tracer", "all", .true.,  "none", 2
@@ -579,18 +593,6 @@ c96L33_amip_glamm
 "dynamics",  "oc2_n",  "oc2_n",    "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "oc2_msulf",  "oc2_msulf",    "matrix_tracer", "all", .true.,  "none", 2
 "dynamics",  "oc2_mocar",  "oc2_mocar",    "matrix_tracer", "all", .true.,  "none", 2
-"dynamics", "dd1_n", "dd1_n", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "dd1_msulf", "dd1_msulf", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "dd1_mdust", "dd1_mdust", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "dd2_n", "dd2_n", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "dd2_msulf", "dd2_msulf", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "dd2_mdust", "dd2_mdust", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssa_n", "ssa_n", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssa_msulf", "ssa_msulf", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssa_mseas", "ssa_mseas", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssc_n", "ssc_n", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssc_msulf", "ssc_msulf", "matrix_tracer", "all", .true., "none", 2
-"dynamics", "ssc_mseas", "ssc_mseas", "matrix_tracer", "all", .true., "none", 2
 "dynamics", "mxa_n", "mxa_n", "matrix_tracer", "all", .true., "none", 2
 "dynamics", "mxa_msulf", "mxa_msulf", "matrix_tracer", "all", .true., "none", 2
 "dynamics", "mxa_mseas", "mxa_mseas", "matrix_tracer", "all", .true., "none", 2
@@ -603,3 +605,1064 @@ c96L33_amip_glamm
 "dynamics", "mxc_mdust", "mxc_mdust", "matrix_tracer", "all", .true., "none", 2
 "dynamics", "mxc_mocar",  "mxc_mocar",    "matrix_tracer", "all", .true.,  "none", 2
 "dynamics", "mxc_mbcar",  "mxc_mbcar",    "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_dg_dry", "mxa_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_dg_wet", "mxa_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_dg_dry", "mxc_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_dg_wet", "mxc_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_condes", "mxc_condes", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_dg_dry", "dd1_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_dg_wet", "dd1_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_condes", "dd1_condes", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_condes_source", "dd1_condes_source", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd1_n", "dd1_n", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd1_n_ddep", "dd1_n_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd1_n_wet_depo", "dd1_n_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_emis", "dd1_n_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_emis_source", "dd1_n_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_tendency_gfdl", "dd1_n_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_value_bf_max", "dd1_n_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_value_af_max", "dd1_n_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_pn", "dd1_coag_pn", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_ln", "dd1_coag_ln", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd1_msulf", "dd1_msulf", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd1_msulf_ddep", "dd1_msulf_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd1_msulf_wet_depo", "dd1_msulf_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_emis", "dd1_msulf_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_emis_source", "dd1_msulf_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_tendency_gfdl", "dd1_msulf_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_value_bf_max", "dd1_msulf_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_value_af_max", "dd1_msulf_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_pmsulf", "dd1_coag_pmsulf", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_lmsulf", "dd1_coag_lmsulf", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd1_mdust", "dd1_mdust", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd1_mdust_ddep", "dd1_mdust_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd1_mdust_wet_depo", "dd1_mdust_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_emis", "dd1_mdust_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_emis_source", "dd1_mdust_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_tendency_gfdl", "dd1_mdust_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_value_bf_max", "dd1_mdust_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_value_af_max", "dd1_mdust_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_pmdust", "dd1_coag_pmdust", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_coag_lmdust", "dd1_coag_lmdust", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssalt1_setl", "ssalt1_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssalt2_setl", "ssalt2_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssalt3_setl", "ssalt3_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssalt4_setl", "ssalt4_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssalt5_setl", "ssalt5_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "dust1_setl", "dust1_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "dust2_setl", "dust2_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "dust3_setl", "dust3_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "dust4_setl", "dust4_setl",  "matrix_tracer", "all", .true., "none", 2
+"tracers", "dust5_setl", "dust5_setl",  "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_dg_dry", "dd2_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_dg_wet", "dd2_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_condes", "dd2_condes", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_condes_source", "dd2_condes_source", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd2_n", "dd2_n", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd2_n_ddep", "dd2_n_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd2_n_wet_depo", "dd2_n_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_emis", "dd2_n_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_emis_source", "dd2_n_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_tendency_gfdl", "dd2_n_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_value_bf_max", "dd2_n_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_value_af_max", "dd2_n_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_pn", "dd2_coag_pn", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_ln", "dd2_coag_ln", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd2_msulf", "dd2_msulf", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd2_msulf_ddep", "dd2_msulf_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd2_msulf_wet_depo", "dd2_msulf_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_emis", "dd2_msulf_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_emis_source", "dd2_msulf_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_tendency_gfdl", "dd2_msulf_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_value_bf_max", "dd2_msulf_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_value_af_max", "dd2_msulf_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_pmsulf", "dd2_coag_pmsulf", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_lmsulf", "dd2_coag_lmsulf", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "dd2_mdust", "dd2_mdust", "matrix_tracer", "all", .true., "none", 2
+"tracers", "dd2_mdust_ddep", "dd2_mdust_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "dd2_mdust_wet_depo", "dd2_mdust_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_emis", "dd2_mdust_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_emis_source", "dd2_mdust_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_tendency_gfdl", "dd2_mdust_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_value_bf_max", "dd2_mdust_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_value_af_max", "dd2_mdust_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_pmdust", "dd2_coag_pmdust", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_coag_lmdust", "dd2_coag_lmdust", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_dg_dry", "ssa_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_dg_wet", "ssa_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_condes", "ssa_condes", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_condes_source", "ssa_condes_source", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssa_n", "ssa_n", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssa_n_ddep", "ssa_n_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssa_n_wet_depo", "ssa_n_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_emis", "ssa_n_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_emis_source", "ssa_n_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_tendency_gfdl", "ssa_n_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_value_bf_max", "ssa_n_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_value_af_max", "ssa_n_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_pn", "ssa_coag_pn", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_ln", "ssa_coag_ln", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssa_msulf", "ssa_msulf", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssa_msulf_ddep", "ssa_msulf_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssa_msulf_wet_depo", "ssa_msulf_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_emis", "ssa_msulf_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_emis_source", "ssa_msulf_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_tendency_gfdl", "ssa_msulf_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_value_bf_max", "ssa_msulf_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_value_af_max", "ssa_msulf_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_pmsulf", "ssa_coag_pmsulf", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_lmsulf", "ssa_coag_lmsulf", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssa_mseas", "ssa_mseas", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssa_mseas_ddep", "ssa_mseas_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssa_mseas_wet_depo", "ssa_mseas_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_emis", "ssa_mseas_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_emis_source", "ssa_mseas_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_tendency_gfdl", "ssa_mseas_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_value_bf_max", "ssa_mseas_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_value_af_max", "ssa_mseas_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_pmseas", "ssa_coag_pmseas", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_coag_lmseas", "ssa_coag_lmseas", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_dg_dry", "ssc_dg_dry", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_dg_wet", "ssc_dg_wet", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_condes", "ssc_condes", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_condes_source", "ssc_condes_source", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssc_n", "ssc_n", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssc_n_ddep", "ssc_n_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssc_n_wet_depo", "ssc_n_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_emis", "ssc_n_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_emis_source", "ssc_n_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_tendency_gfdl", "ssc_n_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_value_bf_max", "ssc_n_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_value_af_max", "ssc_n_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_pn", "ssc_coag_pn", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_ln", "ssc_coag_ln", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssc_msulf", "ssc_msulf", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssc_msulf_ddep", "ssc_msulf_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssc_msulf_wet_depo", "ssc_msulf_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_emis", "ssc_msulf_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_emis_source", "ssc_msulf_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_tendency_gfdl", "ssc_msulf_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_value_bf_max", "ssc_msulf_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_value_af_max", "ssc_msulf_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_pmsulf", "ssc_coag_pmsulf", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_lmsulf", "ssc_coag_lmsulf", "matrix_tracer", "all", .true., "none", 2
+"dynamics", "ssc_mseas", "ssc_mseas", "matrix_tracer", "all", .true., "none", 2
+"tracers", "ssc_mseas_ddep", "ssc_mseas_ddep", "matrix_tracer", "all", .true., "none", 2
+"moist", "ssc_mseas_wet_depo", "ssc_mseas_wet_depo", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_emis", "ssc_mseas_emis", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_emis_source", "ssc_mseas_emis_source", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_tendency_gfdl", "ssc_mseas_tendency_gfdl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_value_bf_max", "ssc_mseas_value_bf_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_value_af_max", "ssc_mseas_value_af_max", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_pmseas", "ssc_coag_pmseas", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_coag_lmseas", "ssc_coag_lmseas", "matrix_tracer", "all", .true., "none", 2
+"dynamics",  "ext_c",  "ext_c",    "matrix_tracer", "all", .true.,  "none", 2
+"dynamics",  "simpleh2so4", "simpleh2so4", "matrix_tracer", "all", .true., "none", 2
+"dynamics",  "simpleso4", "so4", "matrix_tracer", "all", .true.,  "none", 2
+#----------------------debug: the following 2 lines don't produce output
+#"dynamics",  "so4_col",     "so4_col",      "atmos_tracer", "all", .true., "none", 2
+#"dynamics",  "simpleh2so4_col", "simpleh2so4_col",  "atmos_tracer", "all", .true., "none", 2
+#----------------------end
+"tracers", "so4_col",     "so4_col",        "matrix_tracer", "all", .true., "none", 2
+"moist", "wetso4",                "wetso4",               "atmos_tracer", "all", .true., "none", 2
+"moist", "simpleso4_wet_depo",    "simpleso4_wet_depo",    "atmos_tracer", "all", .true., "none", 2
+"moist", "simpleso4_wet_depo_uw", "simpleso4_wet_dep_uw", "atmos_tracer", "all", .true., "none", 2
+"moist", "simpleso4_wetdep",      "simpleso4_wetdep",     "atmos_tracer", "all", .true., "none", 2
+"matrix","h2so4_source",          "h2so4_source",         "matrix_tracer", "all", .true.,  "none", 2
+#"dynamics",  "so4_col",     "so4_col",        "atmos_tracer", "all", .true., "none", 2
+#"dynamics",  "simpleh2so4_col", "simpleh2so4_col",  "atmos_tracer", "all", .true., "none", 2
+#tracers
+"tracers", "akk_n_ddep",         "akk_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2 #dry deposition, in 2d: #/m2/s
+"tracers", "akk_msulf_ddep",         "akk_msulf_ddep",   "matrix_tracer", "all", .true.,  "none", 2 #dry deposition, in 2d: kg/m2/s
+"tracers", "acc_n_ddep",         "acc_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2
+"tracers", "acc_msulf_ddep",         "acc_msulf_ddep",   "matrix_tracer", "all", .true.,  "none", 2
+"tracers", "oc1_n_ddep",         "oc1_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "oc1_mocar_ddep",      "oc1_mocar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "oc1_msulf_ddep",     "oc1_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "oc2_n_ddep",         "oc2_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "oc2_mocar_ddep",      "oc2_mocar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "oc2_msulf_ddep",     "oc2_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "bc1_n_ddep",         "bc1_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "bc1_mbcar_ddep",      "bc1_mbcar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "bc1_msulf_ddep",     "bc1_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "bc2_n_ddep",         "bc2_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "bc2_mbcar_ddep",      "bc2_mbcar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "bc2_msulf_ddep",     "bc2_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxa_n_ddep",         "mxa_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "mxa_mbcar_ddep",      "mxa_mbcar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxa_msulf_ddep",     "mxa_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxa_mocar_ddep",     "mxa_mocar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxa_mdust_ddep",     "mxa_mdust_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxa_mseas_ddep",     "mxa_mseas_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxc_n_ddep",         "mxc_n_ddep",   "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: #/m2/s
+"tracers", "mxc_mbcar_ddep",      "mxc_mbcar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxc_msulf_ddep",     "mxc_msulf_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxc_mocar_ddep",     "mxc_mocar_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxc_mdust_ddep",     "mxc_mdust_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "mxc_mseas_ddep",     "mxc_mseas_ddep", "matrix_tracer", "all", .true.,  "none", 2  #dry deposition, in 2d: kg/m2/s
+"tracers", "akk_n_wdep",         "akk_n_wdep",   "matrix_tracer", "all", .true.,  "none", 2 #wet deposition, in 2d: #/m2/s
+"tracers", "akk_msulf_wdep",         "akk_msulf_wdep",   "matrix_tracer", "all", .true.,  "none", 2 #wet deposition, in 2d: kg/m2/s
+"tracers", "acc_n_wdep",         "acc_n_wdep",   "matrix_tracer", "all", .true.,  "none", 2
+"tracers", "acc_msulf_wdep",         "acc_msulf_wdep",   "matrix_tracer", "all", .true.,  "none", 2
+"moist", "akk_n_wet_depo",         "akk_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2
+"moist", "akk_msulf_wet_depo",         "akk_msulf_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2 #wet deposition, in 2d: kg/m2/s
+"moist", "acc_n_wet_depo",         "acc_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2
+"moist", "acc_msulf_wet_depo",         "acc_msulf_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2
+"moist", "oc1_n_wet_depo",       "oc1_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "oc1_mocar_wet_depo",    "oc1_mocar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "oc1_msulf_wet_depo",   "oc1_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "oc2_n_wet_depo",       "oc2_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "oc2_mocar_wet_depo",    "oc2_mocar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "oc2_msulf_wet_depo",   "oc2_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "bc1_n_wet_depo",       "bc1_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "bc1_mbcar_wet_depo",    "bc1_mbcar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "bc1_msulf_wet_depo",   "bc1_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "bc2_n_wet_depo",       "bc2_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "bc2_mbcar_wet_depo",    "bc2_mbcar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "bc2_msulf_wet_depo",   "bc2_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxa_n_wet_depo",       "mxa_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "mxa_mbcar_wet_depo",    "mxa_mbcar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxa_msulf_wet_depo",   "mxa_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxa_mocar_wet_depo",   "mxa_mocar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxa_mdust_wet_depo",   "mxa_mdust_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxa_mseas_wet_depo",   "mxa_mseas_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxc_n_wet_depo",       "mxc_n_wet_depo",   "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: #/m2/s
+"moist", "mxc_mbcar_wet_depo",    "mxc_mbcar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxc_msulf_wet_depo",   "mxc_msulf_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxc_mocar_wet_depo",   "mxc_mocar_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxc_mdust_wet_depo",   "mxc_mdust_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"moist", "mxc_mseas_wet_depo",   "mxc_mseas_wet_depo", "matrix_tracer", "all", .true.,  "none", 2  #wet deposition, in 2d: kg/m2/s
+"tracers", "simpleh2so4_ddep",             "simpleh2so4_ddep",      "matrix_tracer", "all", .true.,  "none", 2
+#"tracers", "simpleh2so4_wdep",             "simpleh2so4_wdep",      "matrix_tracer", "all", .true.,  "none", 2 #2d, mole/m2/s
+"moist", "simpleh2so4_wet_depo",             "simpleh2so4_wet_depo",      "matrix_tracer", "all", .true.,  "none", 2 #2d, mole/m2/s
+"tracers",   "simpleso4_ddep",      "simpleso4_ddep",       "matrix_tracer", "all", .true., "none", 2
+#"tracers",   "simpleso4_wetdep",    "simpleso4_wdep",       "matrix_tracer", "all", .true., "none", 2
+#"moist",      "simpleso4_wetdep",    "simpleso4_wetdep",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "so4_ddep",      "so4_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "so4_wet_depo",      "so4_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "bcphob_ddep",        "bcphob_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "bcphob_wet_depo",      "bcphob_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "bcphil_ddep",        "bcphil_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "bcphil_wet_depo",      "bcphil_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "omphob_ddep",        "omphob_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "omphob_wet_depo",      "omphob_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "omphil_ddep",        "omphil_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "omphil_wet_depo",      "omphil_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "soa_ddep",        "soa_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "soa_wet_depo",      "soa_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "dust1_ddep",        "dust1_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "dust1_wet_depo",      "dust1_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "dust2_ddep",        "dust2_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "dust2_wet_depo",      "dust2_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "dust3_ddep",        "dust3_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "dust3_wet_depo",      "dust3_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "dust4_ddep",        "dust4_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "dust4_wet_depo",      "dust4_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "dust5_ddep",        "dust5_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "dust5_wet_depo",      "dust5_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "ssalt1_ddep",        "ssalt1_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "ssalt1_wet_depo",      "ssalt1_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "ssalt2_ddep",        "ssalt2_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "ssalt2_wet_depo",      "ssalt2_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "ssalt3_ddep",        "ssalt3_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "ssalt3_wet_depo",      "ssalt3_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "ssalt4_ddep",        "ssalt4_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "ssalt4_wet_depo",      "ssalt4_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+"tracers",   "ssalt5_ddep",        "ssalt5_ddep",       "matrix_tracer", "all", .true., "none", 2
+"moist",     "ssalt5_wet_depo",      "ssalt5_wet_depo",       "matrix_tracer", "all", .true., "none", 2
+#dry and wet diamter in um
+"matrix",  "akk_dg_dry",                  "akk_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2 # um
+"matrix",  "akk_dg_wet",                  "akk_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "acc_dg_dry",                  "acc_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "acc_dg_wet",                  "acc_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "oc1_dg_dry",                  "oc1_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2 # um
+"matrix",  "oc1_dg_wet",                  "oc1_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "oc2_dg_dry",                  "oc2_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2 # um
+"matrix",  "oc2_dg_wet",                  "oc2_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "bc1_dg_dry",                  "bc1_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2 # um
+"matrix",  "bc1_dg_wet",                  "bc1_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "bc2_dg_dry",                  "bc2_dg_dry",             "matrix_tracer", "all", .true.,  "none", 2 # um
+"matrix",  "bc2_dg_wet",                  "bc2_dg_wet",             "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "rh_matrix",                   "rh_matrix",              "matrix_tracer", "all", .true.,  "none", 2 #1-100
+"matrix",  "cond_sink",                   "cond_sink",              "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "kc",                          "kc"       ,              "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "dmdt_h2so4_tot_cond_npf",     "dmdt_h2so4_tot_cond_npf","matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "dndt_npf",                    "dndt_npf" ,              "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "dmdt_h2so4_npf",              "dmdt_h2so4_npf" ,        "matrix_tracer", "all", .true.,  "none", 2 #h2so4 mass loss due to npf, ug/m3/s        
+"matrix",  "acc_msulf_src",         "acc_msulf_src",    "matrix_tracer", "all", .true.,  "none", 2
+"matrix",  "pwt",                         "pwt"       ,             "matrix_tracer", "all", .true.,  "none", 2 #kg air/m2
+"matrix",  "zhalf",                       "zhalf"   ,               "matrix_tracer", "all", .true.,  "none", 2 #m
+"matrix",  "so4_emis",                    "so4_emis",               "matrix_tracer", "all", .true.,  "none", 2 #direct emission of so4, kg/m2/s
+"matrix", "akk_n_emis",         "akk_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: mol/m2/s
+"matrix", "akk_msulf_emis",         "akk_msulf_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: kg/m2/s
+"matrix", "acc_n_emis",         "acc_n_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_emis",         "acc_msulf_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_n_emis",         "oc1_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "oc1_mocar_emis",         "oc1_mocar_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "oc2_n_emis",         "oc2_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "oc2_mocar_emis",         "oc2_mocar_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "bc1_n_emis",         "bc1_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "bc1_mbcar_emis",         "bc1_mbcar_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "bc2_n_emis",         "bc2_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "bc2_mbcar_emis",         "bc2_mbcar_emis",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "mxa_n_emis",         "mxa_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: mol/m2/s
+"matrix", "mxa_msulf_emis",         "mxa_msulf_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: kg/m2/s
+"matrix", "mxa_mdust_emis",         "mxa_mdust_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_mocar_emis",         "mxa_mocar_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_mbcar_emis",         "mxa_mbcar_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_mseas_emis",         "mxa_mseas_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_n_emis",              "mxc_n_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: mol/m2/s
+"matrix", "mxc_msulf_emis",         "mxc_msulf_emis",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: kg/m2/s
+"matrix", "mxc_mdust_emis",         "mxc_mdust_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_mocar_emis",         "mxc_mocar_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_mbcar_emis",         "mxc_mbcar_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_mseas_emis",         "mxc_mseas_emis",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_n_emis_source",         "akk_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: mol/m2/s
+"matrix", "akk_msulf_emis_source",         "akk_msulf_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 #emis source, in 2d: kg/m2/s
+"matrix", "acc_n_emis_source",         "acc_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_emis_source",         "acc_msulf_emis_source",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_n_emis_source",         "oc1_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "oc1_mocar_emis_source",         "oc1_mocar_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "oc2_n_emis_source",         "oc2_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "oc2_mocar_emis_source",         "oc2_mocar_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "bc1_n_emis_source",         "bc1_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "bc1_mbcar_emis_source",         "bc1_mbcar_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "bc2_n_emis_source",         "bc2_n_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: mol/m2/s
+"matrix", "bc2_mbcar_emis_source",         "bc2_mbcar_emis_source",   "matrix_tracer", "all", .true.,  "none", 2 # emis source, in 2d: kg/m2/s
+"matrix", "akk_n_col",         "akk_n_col",   "matrix_tracer", "all", .true.,  "none", 2 #col, in 2d: mol/m2
+"matrix", "akk_msulf_col",         "akk_msulf_col",   "matrix_tracer", "all", .true.,  "none", 2 #col, in 2d: kg/m2
+"matrix", "acc_n_col",         "acc_n_col",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_col",         "acc_msulf_col",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_msulf_tendency_gfdl",    "akk_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_n_tendency_gfdl",         "akk_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_tendency_gfdl",    "acc_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_n_tendency_gfdl",         "acc_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_n_tendency_gfdl",   "oc1_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_mocar_tendency_gfdl","oc1_mocar_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_msulf_tendency_gfdl","oc1_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_n_tendency_gfdl",   "oc2_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_mocar_tendency_gfdl","oc2_mocar_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_msulf_tendency_gfdl","oc2_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_n_tendency_gfdl",   "bc1_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_mbcar_tendency_gfdl","bc1_mbcar_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_msulf_tendency_gfdl","bc1_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_n_tendency_gfdl",   "bc2_n_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_mbcar_tendency_gfdl","bc2_mbcar_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_msulf_tendency_gfdl","bc2_msulf_tendency_gfdl",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_msulf_value_bf_max",     "akk_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_n_value_bf_max",         "akk_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_msulf_value_af_max",    "akk_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_n_value_af_max",         "akk_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_value_bf_max",     "acc_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_n_value_bf_max",         "acc_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_msulf_value_af_max",    "acc_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_n_value_af_max",         "acc_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_n_value_bf_max",    "oc1_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_mocar_value_bf_max","oc1_mocar_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_msulf_value_bf_max","oc1_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_n_value_af_max",    "oc1_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_mocar_value_af_max","oc1_mocar_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_msulf_value_af_max","oc1_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_n_value_bf_max",    "oc2_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_mocar_value_bf_max","oc2_mocar_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_msulf_value_bf_max","oc2_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_n_value_af_max",    "oc2_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_mocar_value_af_max","oc2_mocar_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_msulf_value_af_max","oc2_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_n_value_bf_max",    "bc1_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_mbcar_value_bf_max", "bc1_mbcar_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_msulf_value_bf_max","bc1_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_n_value_af_max",    "bc1_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_mbcar_value_af_max", "bc1_mbcar_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_msulf_value_af_max","bc1_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_n_value_bf_max",    "bc2_n_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_mbcar_value_bf_max", "bc2_mbcar_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_msulf_value_bf_max","bc2_msulf_value_bf_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_n_value_af_max",    "bc2_n_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_mbcar_value_af_max", "bc2_mbcar_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_msulf_value_af_max","bc2_msulf_value_af_max",   "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mjq11", "mjq11", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mjq21", "mjq21", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar0_11", "kbar0_11", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar3_11", "kbar3_11", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar0_12", "kbar0_12", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar3_12", "kbar3_12", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar0_21", "kbar0_21", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar3_21", "kbar3_21", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar0_22", "kbar0_22", "matrix_tracer", "all", .true., "none", 2
+"matrix", "kbar3_22", "kbar3_22", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ri_1", "ri_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ri_2", "ri_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "li_1", "li_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "li_2", "li_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bi_1", "bi_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bi_2", "bi_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "half_knn_1", "half_knn_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "notself_knn_1", "notself_knn_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "rim_11", "rim_11", "matrix_tracer", "all", .true., "none", 2
+"matrix", "rim_21", "rim_21", "matrix_tracer", "all", .true., "none", 2
+"matrix", "fi_1", "fi_1", "matrix_tracer", "all", .true., "none", 2
+"matrix", "fi_2", "fi_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "lim_11", "lim_11", "matrix_tracer", "all", .true., "none", 2
+"matrix", "lim_21", "lim_21", "matrix_tracer", "all", .true., "none", 2
+"matrix", "half_knn_2", "half_knn_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "notself_knn_2", "notself_knn_2", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_condens",                 "akk_condens",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_condens",                 "acc_condens",           "matrix_tracer", "all", .true.,  "none", 2 #condensational mass flux, kg/m2
+"matrix", "oc1_condens",        "oc1_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_condens",        "oc2_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_condens",        "bc1_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_condens",        "bc2_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "dd1_condens",        "dd1_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "dd2_condens",        "dd2_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "ssa_condens",        "ssa_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "ssc_condens",        "ssc_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_condens",        "mxa_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_condens",        "mxc_condens",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_condens_source",                 "akk_condens_source",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_condens_source",                 "acc_condens_source",           "matrix_tracer", "all", .true.,  "none", 2 #condensational mass flux, kg/m2
+"matrix", "oc1_condens_source",        "oc1_condens_source",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_condens_source",        "oc2_condens_source",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_condens_source",        "bc1_condens_source",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_condens_source",        "bc2_condens_source",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_coag_pn",                 "akk_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_coag_ln",                 "akk_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_coag_pmsulf",             "akk_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_coag_lmsulf",             "akk_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_coag_pn",                 "acc_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_coag_ln",                 "acc_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_coag_pmsulf",             "acc_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_coag_lmsulf",             "acc_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_pn",                 "oc1_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_ln",                 "oc1_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_pn",                 "oc2_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_ln",                 "oc2_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_pn",                 "bc1_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_ln",                 "bc1_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_pn",                 "bc2_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_ln",                 "bc2_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_pmsulf",             "oc1_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_lmsulf",             "oc1_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_pmocar",             "oc1_coag_pmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_coag_lmocar",             "oc1_coag_lmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_pmsulf",             "oc2_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_lmsulf",             "oc2_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_pmocar",             "oc2_coag_pmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_coag_lmocar",             "oc2_coag_lmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_pmsulf",                 "bc1_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_lmsulf",                 "bc1_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_pmbcar",                 "bc1_coag_pmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_coag_lmbcar",                 "bc1_coag_lmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_pmsulf",                 "bc2_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_lmsulf",                 "bc2_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_pmbcar",                 "bc2_coag_pmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_coag_lmbcar",                 "bc2_coag_lmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pmsulf",             "mxa_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_lmsulf",             "mxa_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pmocar",             "mxa_coag_pmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_lmocar",             "mxa_coag_lmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pmbcar",             "mxa_coag_pmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_lmbcar",             "mxa_coag_lmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pmdust",             "mxa_coag_pmdust",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_lmdust",             "mxa_coag_lmdust",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pmseas",             "mxa_coag_pmseas",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_lmseas",             "mxa_coag_lmseas",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_pn",             "mxa_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_coag_ln",             "mxa_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pmsulf",             "mxc_coag_pmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_lmsulf",             "mxc_coag_lmsulf",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pmocar",             "mxc_coag_pmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_lmocar",             "mxc_coag_lmocar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pmbcar",             "mxc_coag_pmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_lmbcar",             "mxc_coag_lmbcar",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pmdust",             "mxc_coag_pmdust",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_lmdust",             "mxc_coag_lmdust",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pmseas",             "mxc_coag_pmseas",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_lmseas",             "mxc_coag_lmseas",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_pn",             "mxc_coag_pn",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_coag_ln",             "mxc_coag_ln",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "tot_aqso4_rate",                      "tot_aqso4_rate",                "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_aqso4_partition",                 "akk_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "acc_aqso4_partition",                 "acc_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2 #aqso4_partitionational mass flux, kg/m2
+"matrix", "ssa_aqso4_partition",                 "ssa_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "ssc_aqso4_partition",                 "ssc_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "dd1_aqso4_partition",                 "dd1_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "dd2_aqso4_partition",                 "dd2_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc1_aqso4_partition",                 "oc1_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "oc2_aqso4_partition",                 "oc2_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc1_aqso4_partition",                 "bc1_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "bc2_aqso4_partition",                 "bc2_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxa_aqso4_partition",                 "mxa_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "mxc_aqso4_partition",                 "mxc_aqso4_partition",           "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "akk_n_intermodal", "akk_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_n_intermodal", "acc_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_intermodal", "ssa_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_intermodal", "ssc_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_intermodal", "dd1_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_intermodal", "dd2_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_n_intermodal", "oc1_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_n_intermodal", "oc2_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_n_intermodal", "bc1_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_n_intermodal", "bc2_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_msulf_intermodal", "akk_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_msulf_intermodal", "acc_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_intermodal", "ssa_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_intermodal", "ssc_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_intermodal", "dd1_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_intermodal", "dd2_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_msulf_intermodal", "oc1_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_msulf_intermodal", "oc2_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_msulf_intermodal", "bc1_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_msulf_intermodal", "bc2_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_intermodal", "ssa_mseas_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_intermodal", "ssc_mseas_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_intermodal", "dd1_mdust_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_intermodal", "dd2_mdust_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_mocar_intermodal", "oc1_mocar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_mocar_intermodal", "oc2_mocar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_mbcar_intermodal", "bc1_mbcar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_mbcar_intermodal", "bc2_mbcar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_n_intermodal", "mxa_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_msulf_intermodal", "mxa_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mdust_intermodal", "mxa_mdust_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mocar_intermodal", "mxa_mocar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mbcar_intermodal", "mxa_mbcar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mseas_intermodal", "mxa_mseas_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_n_intermodal", "mxc_n_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_msulf_intermodal", "mxc_msulf_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mdust_intermodal", "mxc_mdust_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mocar_intermodal", "mxc_mocar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mbcar_intermodal", "mxc_mbcar_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mseas_intermodal", "mxc_mseas_intermodal", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_n_setl", "akk_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_n_setl", "acc_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_setl", "ssa_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_setl", "ssc_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_setl", "dd1_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_setl", "dd2_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_n_setl", "oc1_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_n_setl", "oc2_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_n_setl", "bc1_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_n_setl", "bc2_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_n_setl", "mxa_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_n_setl", "mxc_n_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_n_setl_3d", "akk_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_n_setl_3d", "acc_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_n_setl_3d", "ssa_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_n_setl_3d", "ssc_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_n_setl_3d", "dd1_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_n_setl_3d", "dd2_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_n_setl_3d", "oc1_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_n_setl_3d", "oc2_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_n_setl_3d", "bc1_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_n_setl_3d", "bc2_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_n_setl_3d", "mxa_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_n_setl_3d", "mxc_n_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_msulf_setl", "akk_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_msulf_setl", "acc_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_setl", "ssa_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_setl", "ssc_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_setl", "dd1_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_setl", "dd2_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_msulf_setl", "oc1_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_msulf_setl", "oc2_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_msulf_setl", "bc1_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_msulf_setl", "bc2_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_msulf_setl", "mxa_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_msulf_setl", "mxc_msulf_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_setl", "ssa_mseas_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_setl", "ssc_mseas_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mseas_setl", "mxa_mseas_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mseas_setl", "mxc_mseas_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_setl", "dd1_mdust_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_setl", "dd2_mdust_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mdust_setl", "mxa_mdust_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mdust_setl", "mxc_mdust_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_mocar_setl", "oc1_mocar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_mocar_setl", "oc2_mocar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mocar_setl", "mxa_mocar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mocar_setl", "mxc_mocar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_mbcar_setl", "bc1_mbcar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_mbcar_setl", "bc2_mbcar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mbcar_setl", "mxa_mbcar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mbcar_setl", "mxc_mbcar_setl", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_msulf_setl_3d", "akk_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_msulf_setl_3d", "acc_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_msulf_setl_3d", "ssa_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_msulf_setl_3d", "ssc_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_msulf_setl_3d", "dd1_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_msulf_setl_3d", "dd2_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_msulf_setl_3d", "oc1_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_msulf_setl_3d", "oc2_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_msulf_setl_3d", "bc1_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_msulf_setl_3d", "bc2_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_msulf_setl_3d", "mxa_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_msulf_setl_3d", "mxc_msulf_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_mseas_setl_3d", "ssa_mseas_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_mseas_setl_3d", "ssc_mseas_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mseas_setl_3d", "mxa_mseas_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mseas_setl_3d", "mxc_mseas_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_mdust_setl_3d", "dd1_mdust_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_mdust_setl_3d", "dd2_mdust_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mdust_setl_3d", "mxa_mdust_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mdust_setl_3d", "mxc_mdust_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_mocar_setl_3d", "oc1_mocar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_mocar_setl_3d", "oc2_mocar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mocar_setl_3d", "mxa_mocar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mocar_setl_3d", "mxc_mocar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_mbcar_setl_3d", "bc1_mbcar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_mbcar_setl_3d", "bc2_mbcar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_mbcar_setl_3d", "mxa_mbcar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_mbcar_setl_3d", "mxc_mbcar_setl_3d", "matrix_tracer", "all", .true., "none", 2
+"matrix", "single_act_s",       "single_act_s",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "single_act_diag_s",  "single_act_diag_s",  "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "single_act_d",       "single_act_d",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "single_act_diag_d",  "single_act_diag_d",  "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uwc",       "cqn_uwc",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uwc_diag",  "cqn_uwc_diag",  "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uws",       "cqn_uws",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uws_diag",  "cqn_uws_diag",  "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uwd",       "cqn_uwd",       "matrix_tracer", "all", .true.,  "none", 2
+"matrix", "cqn_uwd_diag",  "cqn_uwd_diag",  "matrix_tracer", "all", .true.,  "none", 2
+# total CCN, ambient temperature and pressure [#/cm3]
+"matrix", "ccn_0p10",     "ccn_0p10",     "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p20",     "ccn_0p20",     "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p30",     "ccn_0p30",     "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p50",     "ccn_0p50",     "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p70",     "ccn_0p70",     "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_1p00",     "ccn_1p00",     "matrix_tracer", "all", .true., "none", 2
+# total CCN at STP (273.15 K, 1013.25 hPa) [#/cm3]
+"matrix", "ccn_0p10_stp", "ccn_0p10_stp", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p20_stp", "ccn_0p20_stp", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p30_stp", "ccn_0p30_stp", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p50_stp", "ccn_0p50_stp", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_0p70_stp", "ccn_0p70_stp", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ccn_1p00_stp", "ccn_1p00_stp", "matrix_tracer", "all", .true., "none", 2
+# total particle number, ambient and STP [#/cm3]
+"matrix", "cn",           "cn",           "matrix_tracer", "all", .true., "none", 2
+"matrix", "cn_stp",       "cn_stp",       "matrix_tracer", "all", .true., "none", 2
+# CCN of population akk, ambient [#/cm3]
+"matrix", "akk_ccn_0p10", "akk_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_ccn_0p20", "akk_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_ccn_0p30", "akk_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_ccn_0p50", "akk_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_ccn_0p70", "akk_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "akk_ccn_1p00", "akk_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population acc, ambient [#/cm3]
+"matrix", "acc_ccn_0p10", "acc_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_ccn_0p20", "acc_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_ccn_0p30", "acc_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_ccn_0p50", "acc_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_ccn_0p70", "acc_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "acc_ccn_1p00", "acc_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population dd1, ambient [#/cm3]
+"matrix", "dd1_ccn_0p10", "dd1_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_ccn_0p20", "dd1_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_ccn_0p30", "dd1_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_ccn_0p50", "dd1_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_ccn_0p70", "dd1_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd1_ccn_1p00", "dd1_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population dd2, ambient [#/cm3]
+"matrix", "dd2_ccn_0p10", "dd2_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_ccn_0p20", "dd2_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_ccn_0p30", "dd2_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_ccn_0p50", "dd2_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_ccn_0p70", "dd2_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "dd2_ccn_1p00", "dd2_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population ssa, ambient [#/cm3]
+"matrix", "ssa_ccn_0p10", "ssa_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_ccn_0p20", "ssa_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_ccn_0p30", "ssa_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_ccn_0p50", "ssa_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_ccn_0p70", "ssa_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssa_ccn_1p00", "ssa_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population ssc, ambient [#/cm3]
+"matrix", "ssc_ccn_0p10", "ssc_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_ccn_0p20", "ssc_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_ccn_0p30", "ssc_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_ccn_0p50", "ssc_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_ccn_0p70", "ssc_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "ssc_ccn_1p00", "ssc_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population oc1, ambient [#/cm3]
+"matrix", "oc1_ccn_0p10", "oc1_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_ccn_0p20", "oc1_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_ccn_0p30", "oc1_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_ccn_0p50", "oc1_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_ccn_0p70", "oc1_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc1_ccn_1p00", "oc1_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population oc2, ambient [#/cm3]
+"matrix", "oc2_ccn_0p10", "oc2_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_ccn_0p20", "oc2_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_ccn_0p30", "oc2_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_ccn_0p50", "oc2_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_ccn_0p70", "oc2_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "oc2_ccn_1p00", "oc2_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population bc1, ambient [#/cm3]
+"matrix", "bc1_ccn_0p10", "bc1_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_ccn_0p20", "bc1_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_ccn_0p30", "bc1_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_ccn_0p50", "bc1_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_ccn_0p70", "bc1_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc1_ccn_1p00", "bc1_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population bc2, ambient [#/cm3]
+"matrix", "bc2_ccn_0p10", "bc2_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_ccn_0p20", "bc2_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_ccn_0p30", "bc2_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_ccn_0p50", "bc2_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_ccn_0p70", "bc2_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "bc2_ccn_1p00", "bc2_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population mxa, ambient [#/cm3]
+"matrix", "mxa_ccn_0p10", "mxa_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_ccn_0p20", "mxa_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_ccn_0p30", "mxa_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_ccn_0p50", "mxa_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_ccn_0p70", "mxa_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxa_ccn_1p00", "mxa_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+# CCN of population mxc, ambient [#/cm3]
+"matrix", "mxc_ccn_0p10", "mxc_ccn_0p10", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_ccn_0p20", "mxc_ccn_0p20", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_ccn_0p30", "mxc_ccn_0p30", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_ccn_0p50", "mxc_ccn_0p50", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_ccn_0p70", "mxc_ccn_0p70", "matrix_tracer", "all", .true., "none", 2
+"matrix", "mxc_ccn_1p00", "mxc_ccn_1p00", "matrix_tracer", "all", .true., "none", 2
+"Banizoumbou",1,"hours",1,"days","time",
+"dynamics", "akk_n", "akk_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "acc_n", "acc_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc1_n", "bc1_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc2_n", "bc2_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd1_n", "dd1_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd2_n", "dd2_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc1_n", "oc1_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc2_n", "oc2_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssa_n", "ssa_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssc_n", "ssc_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_n", "mxa_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_n", "mxc_n", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "akk_msulf", "akk_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "acc_msulf", "acc_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc1_msulf", "bc1_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc1_mbcar", "bc1_mbcar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc2_msulf", "bc2_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "bc2_mbcar", "bc2_mbcar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd1_msulf", "dd1_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd1_mdust", "dd1_mdust", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd2_msulf", "dd2_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "dd2_mdust", "dd2_mdust", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc1_msulf", "oc1_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc1_mocar", "oc1_mocar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc2_msulf", "oc2_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "oc2_mocar", "oc2_mocar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssa_msulf", "ssa_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssa_mseas", "ssa_mseas", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssc_msulf", "ssc_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "ssc_mseas", "ssc_mseas", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_msulf", "mxa_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_mbcar", "mxa_mbcar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_mocar", "mxa_mocar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_mdust", "mxa_mdust", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxa_mseas", "mxa_mseas", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_msulf", "mxc_msulf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_mbcar", "mxc_mbcar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_mocar", "mxc_mocar", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_mdust", "mxc_mdust", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"dynamics", "mxc_mseas", "mxc_mseas", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "akk_dg_dry", "akk_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "akk_dg_wet", "akk_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "acc_dg_dry", "acc_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "acc_dg_wet", "acc_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "bc1_dg_dry", "bc1_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "bc1_dg_wet", "bc1_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "bc2_dg_dry", "bc2_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "bc2_dg_wet", "bc2_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "dd1_dg_dry", "dd1_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "dd1_dg_wet", "dd1_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "dd2_dg_dry", "dd2_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "dd2_dg_wet", "dd2_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "oc1_dg_dry", "oc1_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "oc1_dg_wet", "oc1_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "oc2_dg_dry", "oc2_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "oc2_dg_wet", "oc2_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "ssa_dg_dry", "ssa_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "ssa_dg_wet", "ssa_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "ssc_dg_dry", "ssc_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "ssc_dg_wet", "ssc_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "mxa_dg_dry", "mxa_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "mxa_dg_wet", "mxa_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "mxc_dg_dry", "mxc_dg_dry", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "mxc_dg_wet", "mxc_dg_wet", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "pwt", "pwt", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+"matrix", "zhalf", "zhalf", "Banizoumbou", "all", .true., "2.67,2.67,13.55,13.55,0.00,1000.00", 2
+####################
+# Table: AERmon
+# Version: 1.00.15
+####################
+ "aerosol_month_cmip",       1, "months",    1,  "days",  "time",
+####################
+##. Auxiliary fields required for model level output
+ "cmip",          "ap",            "ap",            "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "b",             "b",             "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "ap_bnds",       "ap_bnds",       "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "b_bnds",        "b_bnds",        "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "lev_bnds",      "lev_bnds",      "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "ap_half",       "ap_half",       "aerosol_month_cmip",      "all",  .false., "none", 1
+ "cmip",          "b_half",        "b_half",        "aerosol_month_cmip",      "all",  .false., "none", 1
+##. Ambient Aerosol Absorption Optical Thickness at 550 nm, 1.0 (longitude,latitude,time)
+ "radiation",     "abs550aer",     "abs550aer",     "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Vertically integrated mass content of air in layer, kg m-2 (longitude,latitude,alevel,time)
+ "tracers",       "airmass",       "airmass",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Northern Hemisphere Tracer Lifetime, yr (longitude,latitude,alevel,time)
+#"UNKNOWN",       "aoanh",         "aoanh",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Boundary Layer Depth, m (longitude,latitude,time)
+ "vert_turb",     "bldep",         "bldep",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. C2H2 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+# NOT AVAILABLE
+#"UNKNOWN",       "c2h2",          "c2h2",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. C2H6 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "c2h6_mol_mol",  "c2h6",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. C3H6  volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "c3h6_mol_mol",  "c3h6",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. C3H8  volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "c3h8_mol_mol",  "c3h8",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. cloud condensation nuclei concentration at liquid cloud top, m-3 (longitude,latitude,time)
+#"UNKNOWN",       "ccn",           "ccn",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Cloud Droplet Number Concentration, m-3 (longitude,latitude,alevel,time)
+ "strat",         "cdnc",          "cdnc",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. CH3COCH3  volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "ch3coch3_mol_mol", "ch3coch3",   "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. CH4 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#NOT APPLICABLE - Scalar
+#"UNKNOWN",       "ch4",           "ch4",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Aqueous-phase production rate of SO4, kg m-2 s-1 (longitude,latitude,alevel,time)
+# REFINE_DIAG -- pso4_aq_kg_m2_s + pso4_aq_so2_reevap_ls
+#"UNKNOWN",       "cheaqpso4",       "cheaqpso4",         "aerosol_month_cmip","all",  .true.,  "none", 2
+ "tracers",       "pso4_aq_kg_m2_s", "pso4_aq_kg_m2_s",   "aerosol_month_cmip","all",  .true.,  "none", 2
+ "tracers", "pso4_aq_so2_reevap_ls", "pso4_aq_so2_reevap_ls","aerosol_month_cmip","all",.true., "none", 2
+##. Gas-phase production rate of SO4, kg m-2 s-1 (longitude,latitude,alevel,time)
+ "tracers",       "pso4_gas_kg_m2_s", "chegpso4",   "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total net production of anthropogenic secondary organic aerosol, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "chepasoa",      "chepasoa",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. chemical production of dry aerosol secondary organic matter, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "chepsoa",       "chepsoa",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Convective Cloud Cover Percentage, % (longitude,latitude,time)
+ "uw_conv",       "cltc_uw",       "cltc",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. CO volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+ "tracers",       "co_mol_mol",    "co",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. CO2 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#NOT APPLICABLE - Scalar
+#"UNKNOWN",       "co2",           "co2",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Cloud Optical Depth, 1.0 (longitude,latitude,time) -- ????
+#"UNKNOWN",       "cod",           "cod",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. DMS volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+ "tracers",       "simpledms_mol_mol", "dms",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of black carbon aerosol mass, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "drybc",         "drybc",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Dry Deposition Rate of Dust, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "drydust",       "drydust",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Dry Deposition Rate of nh3, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "nh3_ddep_kg_m2_s", "drynh3",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of nh4, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "nh4_ddep_kg_m2_s", "drynh4",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of noy, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "fam_noy_ddep_kg_m2_s", "drynoy",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Dry Deposition Rate of o3, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "o3_ddep_kg_m2_s", "dryo3",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of dry aerosol total organic matter, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "dryoa",         "dryoa",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Dry Deposition Rate of so2, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "simpleso2_ddep_kg_m2_s", "dryso2", "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of so4, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "simpleso4_ddep_kg_m2_s", "dryso4", "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dry deposition rate of seasalt, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "dryss",         "dryss",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission rate of anthropogenic co, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emiaco",        "emiaco",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. anthropogenic emission rate of nox, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emianox",       "emianox",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission of anthropogenic  organic aerosol, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emiaoa",        "emiaoa",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+# REFINED_DIAG: emiaoa = emiapoa + chepasoa
+ "tracers",       "emiapoa",       "emiapoa",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. emission rate of black carbon aerosol mass, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emibc",         "emibc",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission rate of biogenic nmvoc, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emibvoc",       "emibvoc",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of co, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "emico",         "emico",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of dms, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emidms",        "emidms",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission rate of dust, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emidust",       "emidust",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of isoprene, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "emiisop",       "emiisop",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. layer-integrated lightning production of NOx, mol s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "emilnox",       "emilnox",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of nh3, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "eminh3",        "eminh3",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of nox, kg m-2 s-1 (longitude,latitude,time)
+#"tracers",       "eminox",        "eminox",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. primary emission and chemical production of dry aerosol organic matter, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emioa",         "emioa",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+# REFINED_DIAG: emioa = emipoa + chepsoa
+ "tracers",       "emipoa",        "emipoa",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Emission Rate of so2, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emiso2",        "emiso2",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total direct emission rate of so4, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emiso4",        "emiso4",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission rate of seasalt, kg m-2 s-1 (longitude,latitude,time)
+ "tracers",       "emiss",         "emiss",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. total emission rate of nmvoc, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "emivoc",        "emivoc",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Mass Fraction of Water, 1.0 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "h2o",           "h2o",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Formaldehyde volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "ch2o_mol_mol",  "hcho",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. HCl volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "hcl_mol_mol",   "hcl",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. HNO3 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "hno3_mol_mol",  "hno3",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Isoprene volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "isop_mol_mol",  "isop",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. photolysis rate of NO2, s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "jno2",          "jno2",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Monthly Loss of atmospheric Methane, mol m-3 s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "lossch4",       "lossch4",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Monthly Loss of atmospheric Carbon Monoxide, mol m-3 s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "lossco",        "lossco",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Monthly Loss of atmospheric Nitrous Oxide, mol m-3 s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "lossn2o",       "lossn2o",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. liquid water path, kg m-2 (longitude,latitude,time)
+ "moist",         "lwp",           "lwp",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Aerosol water mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "mmraerh2o",     "mmraerh2o",     "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Elemental carbon mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "fam_bc_kg_kg",  "mmrbc",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Dust aerosol mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "fam_dust_kg_kg","mmrdust",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. NH4 mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+#"tracers",       "nh4_kg_kg",     "mmrnh4",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. NO3 aerosol mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+#"tracers",       "nh4no3_kg_kg",  "mmrno3",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total organic aerosol mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "fam_om_kg_kg",  "mmroa",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. PM1.0 mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "pm1_kg_kg",     "mmrpm1",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. PM10 mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "pm10_kg_kg",    "mmrpm10",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. PM2.5 mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "pm25_kg_kg",    "mmrpm2p5",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Aerosol sulfate mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "simpleso4_kg_kg", "mmrso4",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Secondary organic aerosol mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "SOA_kg_kg",     "mmrsoa",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Sea Salt mass mixing ratio, kg kg-1 (longitude,latitude,alevel,time)
+ "tracers",       "fam_seasalt_kg_kg", "mmrss",     "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. N2O volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "n2o_mol_mol",   "n2o",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Fixed surface layer mixing ratio over 30o-50oN (100ppbv), uniform fixed 50-day exponential decay., mol mol-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "nh50",          "nh50",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. NO volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "no_mol_mol",    "no",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. NO2 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "no2_mol_mol",   "no2",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Ozone volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+ "radiation",     "o3",            "o3",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. O3 destruction rate, mol m-3 s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "o3loss",        "o3loss",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. O3 production rate, mol m-3 s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "o3prod",        "o3prod",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Ozone volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "o3ste",         "o3ste",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. ambient aerosol optical thickness at 440 nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od440aer",      "od440aer",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. ambient aerosol optical thickness at 550 nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550aer",      "od550aer",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. aerosol water aod at 550nm, 1.0 (longitude,latitude,time)
+#"UNKNOWN",       "od550aerh2o",   "od550aerh2o",   "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Aerosol Optical Depth at 550nm due to Biomass Burning, 1.0 (longitude,latitude,time)
+#"UNKNOWN",       "od550bb",       "od550bb",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. black carbon aod at 550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550bc",       "od550bc",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. ambient aerosol optical thickness at 550 nm, 1.0 (longitude,latitude,time)
+#"UNKNOWN",       "od550csaer",    "od550csaer",    "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. dust aod@550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550dust",     "od550dust",     "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. ambient fine aerosol optical thickness at 550 nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550lt1aer",   "od550lt1aer",   "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. nitrate aod@550nm, 1.0 (longitude,latitude,time)
+#"UNKNOWN",       "od550no3",      "od550no3",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. **pom+som** aod@550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550oa",       "od550oa",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. sulfate aod@550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550so4",      "od550so4",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. soa aod@550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550soa",      "od550soa",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. sea salt aod@550nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od550ss",       "od550ss",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. ambient aerosol optical thickness at 870 nm, 1.0 (longitude,latitude,time)
+ "radiation",     "od870aer",      "od870aer",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. OH volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+ "tracers",       "oh_mol_mol",    "oh",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. PAN volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+#"tracers",       "pan_mol_mol",   "pan",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Pressure on Model Levels, Pa (longitude,latitude,alevel,time)
+ "phys",          "pfull",         "pfull",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Pressure on Model Half-Levels, Pa (longitude,latitude,alevhalf,time)
+ "phys",          "phalf",         "phalf",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Photolysis Rate of Ozone (O3) to Excited Atomic Oxygen (singlet D: O1d), s-1 (longitude,latitude,alevel,time)
+#"UNKNOWN",       "photo1d",       "photo1d",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Phytotoxic ozone dose, mol m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "pod0",          "pod0",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Tropopause Air Pressure, Pa (longitude,latitude,time)
+ "tracers",       "ptp",           "ptp",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. cloud-top effective droplet radius, m (longitude,latitude,time)
+ "cloudrad",      "reffclwtop",    "reffclwtop",    "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. TOA Outgoing Aerosol-Free Longwave Radiation, W m-2 (longitude,latitude,time)
+ "radiation",     "rlutaf",        "rlutaf",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. TOA Outgoing Clear-Sky, Aerosol-Free Longwave Radiation, W m-2 (longitude,latitude,time)
+ "radiation",     "rlutcsaf",      "rlutcsaf",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. TOA Outgoing Aerosol-Free Shortwave Radiation, W m-2 (longitude,latitude,time)
+ "radiation",     "rsutaf",        "rsutaf",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. TOA Outgoing Clear-Sky, Aerosol-Free Shortwave Radiation, W m-2 (longitude,latitude,time)
+ "radiation",     "rsutcsaf",      "rsutcsaf",      "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. SO2 volume mixing ratio, mol mol-1 (longitude,latitude,alevel,time)
+ "tracers",       "simpleso2_mol_mol", "so2",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Tropopause Air Temperature, K (longitude,latitude,time)
+ "tracers",       "tatp",          "tatp",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. tendency_of_air_temperature_due_to_longwave_heating, K s-1 (longitude,latitude,alevel,time)
+ "radiation",     "tntrl",         "tntrl",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. tendency_of_air_temperature_due_to_shortwave_heating, K s-1 (longitude,latitude,alevel,time)
+ "radiation",     "tntrs",         "tntrs",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Total Ozone Column, m (longitude,latitude,time)
+ "radiation",     "toz",           "toz",           "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. tropospheric ozone column, m (longitude,latitude,time)
+#"tracers",       "tropoz",        "tropoz",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. air temperature at cloud top, K (longitude,latitude,time)
+#"UNKNOWN",       "ttop",          "ttop",          "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Eastward Wind, m s-1 (longitude,latitude,alevel,time)
+ "atmos",         "ua",            "ua",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Northward Wind, m s-1 (longitude,latitude,alevel,time)
+ "atmos",         "va",            "va",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Upward Air Velocity, m s-1 (longitude,latitude,alevel,time)
+ "atmos",         "wa",            "wa",            "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of black carbon aerosol mass, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "wetbc",         "wetbc",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of dust, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "wetdust",       "wetdust",       "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of nh3, kg m-2 s-1 (longitude,latitude,time)
+#"moist",         "nh3_wetdep_kg_m2_s",   "wetnh3", "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of nh4, kg m-2 s-1 (longitude,latitude,time)
+#"moist",         "nh4_wetdep_kg_m2_s",   "wetnh4", "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition of noy incl aerosol nitrate, kg m-2 s-1 (longitude,latitude,time)
+#"UNKNOWN",       "wetnoy",        "wetnoy",        "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of dry aerosol total organic matter, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "wetoa",         "wetoa",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. wet deposition rate of so2, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "simpleso2_wetdep_kg_m2_s", "wetso2", "aerosol_month_cmip",  "all",  .true.,  "none", 2
+##. wet deposition rate of so4, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "simpleso4_wetdep_kg_m2_s", "wetso4", "aerosol_month_cmip",  "all",  .true.,  "none", 2
+##. wet deposition rate of seasalt, kg m-2 s-1 (longitude,latitude,time)
+ "moist",         "wetss",         "wetss",         "aerosol_month_cmip",      "all",  .true.,  "none", 2
+##. Geopotential Height, m (longitude,latitude,alevel,time)
+ "phys",          "zg",            "zg",            "aerosol_month_cmip",        "all",  .true.,  "none", 2
+##. Tropopause Altitude, m (longitude,latitude,time)
+ "tracers",       "ztp",           "ztp",           "aerosol_month_cmip",      "all",  .true.,  "none", 2

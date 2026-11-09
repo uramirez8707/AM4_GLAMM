@@ -26,6 +26,6 @@ cp ../exec/fms_am4_glamm.x .
 # This is needed for GAEA on c5
 # setenv FI_VERBS_PREFER_XRC 0
 
-srun --ntasks=384 --cpus-per-task=1 --export=ALL,OMP_NUM_THREADS=1 ./fms_am4_glamm.x | & tee fms.out
+srun --ntasks=576 --cpus-per-task=2 --export=ALL,OMP_NUM_THREADS=1 ./fms_am4_glamm.x | & tee fms.out
 
 echo "----------------- END OF MODEL RUN -----------------"
